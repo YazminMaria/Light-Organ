@@ -1,17 +1,15 @@
-Light-Organ
-===========
- int blueLEDs1=20;
-  int blueLEDs2=19;
-  int greenLEDs1=18;
-  int greenLEDs2=17;
-  int redLEDs1=;
-  int redLEDs2=;
-  int red1=;
-  int green1=;
-  int blue1=;
-  int red2=;
-  int green2=;
-  int blue2=;
+ // int blueLEDs1=20;
+ // int blueLEDs2=19;
+ // int greenLEDs1=18;
+ // int greenLEDs2=17;
+  //int redLEDs1=;
+ // int redLEDs2=;
+//  int red1=;
+ // int green1=;
+ // int blue1=;
+  int red2=7;
+  int green2=5;
+  int blue2=3;
   int middlered=2;
   int middlegreen=4;
   int middleblue=6;
@@ -19,15 +17,15 @@ Light-Organ
 void setup()
 {
   Serial.begin(9600);
-pinMode(blueLEDs1, OUTPUT);
-  pinMode(blueLEDs2, OUTPUT);
-  pinMode(greenLEDs1, OUTPUT);
-  pinMode(greenLEDs2, OUTPUT);
-  pinMode(redLEDs1, OUTPUT);
-  pinMode(redLEDs2, OUTPUT);
-  pinMode(red1, OUTPUT);
-  pinMode(green1, OUTPUT);
-  pinMode(blue1, OUTPUT); 
+  //pinMode(blueLEDs1, OUTPUT);
+ // pinMode(blueLEDs2, OUTPUT);
+ // pinMode(greenLEDs1, OUTPUT);
+ // pinMode(greenLEDs2, OUTPUT);
+ // pinMode(redLEDs1, OUTPUT);
+//  pinMode(redLEDs2, OUTPUT);
+//  pinMode(red1, OUTPUT);
+ // pinMode(green1, OUTPUT);
+ // pinMode(blue1, OUTPUT); 
   pinMode(red2, OUTPUT);
   pinMode(green2, OUTPUT);
   pinMode(blue2, OUTPUT); 
@@ -36,22 +34,32 @@ pinMode(blueLEDs1, OUTPUT);
   pinMode(middleblue, OUTPUT); 
 }
   
-  void setColor(int red, int green, int blue,int r, int g, int b)
+  void setColor(int blue, int green, int red,int r, int g, int b)
 {
   analogWrite(r, red);
   analogWrite(g, green);
   analogWrite(b, blue); 
 } 
 
-
-void loop()
+void freq()
 {
   int r1 = random(0, 255);
   int r2 = random(0, 255);
   int r3 = random (0,255);
   setColor(r1, r2, r3, middlered, middlegreen, middleblue);// purple
-delay(50);
-setColor(0, 0, 0, middlered, middlegreen, middleblue);
-delay(2000);
+  delay(50);
+
 }
+void loop()
+{
+//  setColor(127,0,255 , blue2, green2, red2);
+//  delay(50);
+  setColor(128,0,130, blue2, green2, red2);
+  delay(50);
+}
+
+
+
+  
+  
 
