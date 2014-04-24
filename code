@@ -1,31 +1,31 @@
- // int blueLEDs1=20;
- // int blueLEDs2=19;
- // int greenLEDs1=18;
- // int greenLEDs2=17;
-  //int redLEDs1=;
- // int redLEDs2=;
-//  int red1=;
- // int green1=;
- // int blue1=;
-  int red2=7;
-  int green2=5;
-  int blue2=3;
-  int middlered=2;
-  int middlegreen=4;
-  int middleblue=6;
+  int blueLEDs1=31;
+  int blueLEDs2=12;
+  int greenLEDs1=13;
+  int greenLEDs2=24;
+  int redLEDs1=22;
+  int redLEDs2=11;
+  int red1=2;
+  int green1=3;
+  int blue1=4;
+  int red2=27;
+  int green2=25;
+  int blue2=23;
+  int middlered=5;
+  int middlegreen=6;
+  int middleblue=7;
   
 void setup()
 {
   Serial.begin(9600);
-  //pinMode(blueLEDs1, OUTPUT);
- // pinMode(blueLEDs2, OUTPUT);
- // pinMode(greenLEDs1, OUTPUT);
- // pinMode(greenLEDs2, OUTPUT);
- // pinMode(redLEDs1, OUTPUT);
-//  pinMode(redLEDs2, OUTPUT);
-//  pinMode(red1, OUTPUT);
- // pinMode(green1, OUTPUT);
- // pinMode(blue1, OUTPUT); 
+  pinMode(blueLEDs1, OUTPUT);
+  pinMode(blueLEDs2, OUTPUT);
+  pinMode(greenLEDs1, OUTPUT);
+  pinMode(greenLEDs2, OUTPUT);
+  pinMode(redLEDs1, OUTPUT);
+  pinMode(redLEDs2, OUTPUT);
+  pinMode(red1, OUTPUT);
+  pinMode(green1, OUTPUT);
+  pinMode(blue1, OUTPUT); 
   pinMode(red2, OUTPUT);
   pinMode(green2, OUTPUT);
   pinMode(blue2, OUTPUT); 
@@ -47,19 +47,40 @@ void freq()
   int r2 = random(0, 255);
   int r3 = random (0,255);
   setColor(r1, r2, r3, middlered, middlegreen, middleblue);// purple
-  delay(50);
+  delay(25);
 
 }
 void loop()
 {
-//  setColor(127,0,255 , blue2, green2, red2);
-//  delay(50);
   setColor(128,0,130, blue2, green2, red2);
   delay(50);
+  digitalWrite(greenLEDs1,HIGH);
+  delay(50);
+  digitalWrite(greenLEDs1,LOW);
+  delay(50);
+  digitalWrite(greenLEDs2,HIGH);
+  delay(50);
+  digitalWrite(greenLEDs2,LOW);
+  delay(50);
+  digitalWrite(redLEDs2,HIGH);
+  delay(50);
+  digitalWrite(redLEDs2,LOW);
+  delay(50);
+  digitalWrite(redLEDs1,HIGH);
+  delay(50);
+  digitalWrite(redLEDs1,LOW);
+  delay(50);
+  digitalWrite(blueLEDs2,HIGH);
+  delay(50);
+  digitalWrite(blueLEDs2,LOW);
+  delay(50);
+   digitalWrite(blueLEDs1,HIGH);
+  delay(50);
+  digitalWrite(blueLEDs1,LOW);
+  delay(50);
+  setColor(128,0,130, blue1, green1, red1);
+  delay(50);
+  freq();
 }
 
-
-
-  
-  
 
