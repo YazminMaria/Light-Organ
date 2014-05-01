@@ -50,10 +50,7 @@ void freq()
   delay(25);
 
 }
-void loop()
-{
-  setColor(128,0,130, blue2, green2, red2);
-  delay(50);
+void lowFreq(){
   digitalWrite(greenLEDs1,HIGH);
   delay(50);
   digitalWrite(greenLEDs1,LOW);
@@ -62,14 +59,8 @@ void loop()
   delay(50);
   digitalWrite(greenLEDs2,LOW);
   delay(50);
-  digitalWrite(redLEDs2,HIGH);
-  delay(50);
-  digitalWrite(redLEDs2,LOW);
-  delay(50);
-  digitalWrite(redLEDs1,HIGH);
-  delay(50);
-  digitalWrite(redLEDs1,LOW);
-  delay(50);
+}
+void midFreq(){
   digitalWrite(blueLEDs2,HIGH);
   delay(50);
   digitalWrite(blueLEDs2,LOW);
@@ -78,9 +69,53 @@ void loop()
   delay(50);
   digitalWrite(blueLEDs1,LOW);
   delay(50);
+}
+void highFreq(){
+  digitalWrite(redLEDs2,HIGH);
+  delay(50);
+  digitalWrite(redLEDs2,LOW);
+  delay(50);
+  digitalWrite(redLEDs1,HIGH);
+  delay(50);
+  digitalWrite(redLEDs1,LOW);
+  delay(50);
+}
+void alwaysOn(){
+  setColor(128,0,130, blue2, green2, red2);
+  delay(50);
+  digitalWrite(blue2,LOW);
+  digitalWrite(green2,LOW);
+  digitalWrite(red2,LOW);
+  delay(50);
   setColor(128,0,130, blue1, green1, red1);
   delay(50);
+   digitalWrite(blue1,LOW);
+  digitalWrite(green1,LOW);
+  digitalWrite(red1,LOW);
+  delay(50);
+    setColor(128,0,130, blue2, green2, red2);
+  delay(50);
+  digitalWrite(blue2,LOW);
+  digitalWrite(green2,LOW);
+  digitalWrite(red2,LOW);
+  delay(50);
+  setColor(128,0,130, blue1, green1, red1);
+  delay(50);
+   digitalWrite(blue1,LOW);
+  digitalWrite(green1,LOW);
+  digitalWrite(red1,LOW);
+  delay(50);
+}
+void loop()
+{
+  Serial.println(analogRead(0));
+  lowFreq();
+  midFreq();
+  highFreq();
+  alwaysOn();
   freq();
 }
 
 
+
+  
