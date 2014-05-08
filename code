@@ -1,4 +1,4 @@
-  int blueLEDs1=31;
+    int blueLEDs1=31;
   int blueLEDs2=12;
   int greenLEDs1=13;
   int greenLEDs2=24;
@@ -47,7 +47,7 @@ void freq()
   int r2 = random(0, 255);
   int r3 = random (0,255);
   setColor(r1, r2, r3, middlered, middlegreen, middleblue);// purple
-  delay(25);
+  delay(100);
 
 }
 void lowFreq(){
@@ -106,16 +106,41 @@ void alwaysOn(){
   digitalWrite(red1,LOW);
   delay(50);
 }
+
+int getValue()
+{
+  int a = analogRead(0);
+  delay(50);
+  int b = analogRead(0);
+  delay(50);
+  int c = analogRead(0);
+  delay(50);
+  int d = analogRead(0);
+  delay(50);
+  int e = analogRead(0);
+  delay(50);
+  int f = analogRead(0);
+  delay(50);
+  return (a+b+c+d+e+f)/6;
+}
 void loop()
 {
+  int value = getValue();
   Serial.println(analogRead(0));
-  lowFreq();
-  midFreq();
-  highFreq();
-  alwaysOn();
-  freq();
-}
+  if (value > 550 && value < 650)
+    lowFreq();
+  else if (value < 750)
+    midFreq();
+  else if (value < 850)
+    highFreq();
 
+    //alwaysOn();
+ // lowFreq();
+//  midFreq();
+  //highFreq();
+  //alwaysOn();
+ freq();
+}
 
 
   
