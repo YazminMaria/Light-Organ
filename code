@@ -1,4 +1,4 @@
-    int blueLEDs1=31;
+   int blueLEDs1=31;
   int blueLEDs2=12;
   int greenLEDs1=13;
   int greenLEDs2=24;
@@ -119,28 +119,26 @@ int getValue()
   delay(50);
   int e = analogRead(0);
   delay(50);
-  int f = analogRead(0);
-  delay(50);
-  return (a+b+c+d+e+f)/6;
+  return (a+b+c+d+e)/5;
 }
 void loop()
 {
   int value = getValue();
   Serial.println(analogRead(0));
-  if (value > 550 && value < 650)
+
+     freq();
+     alwaysOn();
+  if (value > 450 && value < 650)
     lowFreq();
-  else if (value < 750)
+  else if (value > 650 && value < 750)
     midFreq();
-  else if (value < 850)
+  else if (value > 900 && value < 1000)
     highFreq();
 
-    //alwaysOn();
- // lowFreq();
-//  midFreq();
-  //highFreq();
-  //alwaysOn();
- freq();
 }
+
+
+  
 
 
   
