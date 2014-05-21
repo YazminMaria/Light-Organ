@@ -110,35 +110,25 @@ void alwaysOn(){
 int getValue()
 {
   int a = analogRead(0);
-  delay(50);
+  delay(5);
   int b = analogRead(0);
-  delay(50);
+  delay(5);
   int c = analogRead(0);
-  delay(50);
-  int d = analogRead(0);
-  delay(50);
-  int e = analogRead(0);
-  delay(50);
-  return (a+b+c+d+e)/5;
+  delay(5);
+  return (a+b+c)/3;
 }
 void loop()
 {
   int value = getValue();
-  Serial.println(analogRead(0));
+  Serial.println(value);
 
      freq();
      alwaysOn();
-  if (value > 450 && value < 650)
-    lowFreq();
-  else if (value > 650 && value < 750)
-    midFreq();
-  else if (value > 900 && value < 1000)
-    highFreq();
-
+  if (value<=936){
+    lowFreq();}
+  else if (value>936 && value<=938)
+    {midFreq(); }
+  else 
+    { highFreq(); }
+delay(500);
 }
-
-
-  
-
-
-  
